@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Приют для кошек</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+<div id="menu" class="minMenu">
+    <a href="javascript:void(0)" class="minMenuClosebtn" onclick="closeMenu()">&times;</a>
+    <a href="#">Вход</a>
+    <a href="#">Регистрация</a>
+    <a href="#">Кошки</a>
+    <a href="#">О нас</a>
+    <a href="#">RSS</a>
+</div>
+<header>
+    <div class="logoPart">
+        <img class="logo" src="assets/cat.svg">
+        <h2>Приют кошек</h2>
+    </div>
+    <div class="menuOpen">
+        <img alt="open menu" src="assets/menu.svg" onclick="openMenu()">
+    </div>
+    <div class="menuLinks">
+        <li><a class="link" href="#">Вход</a></li>
+        <li><a class="link" href="#">Регистрация</a></li>
+        <li><a class="link" href="#">Кошки</a></li>
+        <li><a class="link" href="#">О нас</a></li>
+        <li><a class="link" href="#">RSS</a></li>
+    </div>
+</header>
+
+<main>
+    <div class="content">
+        <p>МЫ ОБЯЗАТЕЛЬНО ПОДБЕРЕМ ВАМ ДРУГА!</p>
+        <div class="container" id="container">
+            <div class="cat-cards">
+                <div class="cat-card" v-for="cat in cats">
+
+                    <div class="cat-img"><img :src=cat.img alt=" "/></div>
+                    <h4 class="cat-name">{{cat.name}}</h4>
+                    <div class="cat-description">
+                        <p>{{cat.description}}</p>
+                    </div>
+                    <div class="cat-description">
+                        <p>Порода: {{cat.breed}}</p>
+                        <p>Возраст: {{cat.age}}</p>
+                        <p>Окрас: {{cat.color}}</p>
+                        <p><img class="like" src="assets/like.svg">{{cat.likes}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+<footer>
+    <div class="logoPart">
+        <img class="logo" src="assets/cat.svg">
+        <h2>Приют кошек</h2>
+    </div>
+    <div class="social">
+        <span>Подпишитесь: </span>
+        <a href="#"><img alt="logo" src="assets/instagram.svg"></a>
+        <a href="#"><img alt="logo" src="assets/vk.svg"></a>
+        <a href="#"><img alt="logo" src="assets/twitter.svg"></a>
+    </div>
+
+</footer>
+
+</body>
+</html>
